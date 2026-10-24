@@ -31,7 +31,7 @@ You also need a [Nerd Font](https://www.nerdfonts.com/) set in your terminal emu
  
 ```bash
 # 1. Clone the repo
-git clone https://github.com/<your-username>/<repo-name>.git ~/bashrc-repo
+git clone https://github.com/tudorioan1/mybash.git ~/bashrc-repo
 cd ~/bashrc-repo
  
 # 2. Back up your current config
