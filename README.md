@@ -34,6 +34,7 @@ Supported distros: Arch, Debian/Ubuntu, Fedora and openSUSE.
 ```bash
 git clone https://github.com/tudorioan1/mybash.git ~/mybash
 cd ~/mybash
+chmod +x install.sh
 ./install.sh
 ```
 
