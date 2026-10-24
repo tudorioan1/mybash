@@ -28,23 +28,51 @@ For `oh-my-posh`, follow the [official installation guide](https://ohmyposh.dev/
 You also need a [Nerd Font](https://www.nerdfonts.com/) set in your terminal emulator, otherwise the prompt icons won't render properly.
  
 ## Installation
- 
+
+Supported distros: Arch, Debian/Ubuntu, Fedora and openSUSE.
+
 ```bash
-# 1. Clone the repo
-git clone https://github.com/tudorioan1/mybash.git ~/bashrc-repo
-cd ~/bashrc-repo
- 
-# 2. Back up your current config
-[ -f ~/.bashrc ] && mv ~/.bashrc ~/.bashrc.bak
- 
-# 3. Link the files into place
-ln -s "$PWD/bashrc" ~/.bashrc
-mkdir -p ~/.config/oh-my-posh
-ln -s "$PWD/oh-my-posh/config.omp.json" ~/.config/oh-my-posh/config.omp.json
- 
-# 4. Reload
+git clone https://github.com/tudorioan1/mybash.git ~/mybash
+cd ~/mybash
+./install.sh
+```
+
+The script detects your package manager (`pacman`, `apt`, `dnf` or `zypper`), installs the dependencies (`zoxide`, `bat`, `fastfetch`, `oh-my-posh`) and symlinks the config files into place. Anything already there is moved to `<file>.bak.<timestamp>`, never deleted.
+
+Options:
+
+| Flag | What it does |
+|------|--------------|
+| `--no-deps` | only link the config files, don't install packages |
+| `-y`, `--yes` | don't ask for confirmation before installing |
+| `-h`, `--help` | show help |
+
+Then open a new terminal or run `source ~/.bashrc`.
+
+> `oh-my-posh` is installed with its [official installer](https://ohmyposh.dev/docs/installation/linux), which is downloaded and run with `curl | bash`. Use `--no-deps` and install it yourself if you'd rather not.
+
+### Manual installation
+
+```bash
+git clone https://github.com/tudorioan1/mybash.git ~/mybash
+cd ~/mybash
+
+# Back up your current config
+[ -e ~/.bashrc ] && mv ~/.bashrc ~/.bashrc.bak
+[ -e ~/.config/oh-my-posh ] && mv ~/.config/oh-my-posh ~/.config/oh-my-posh.bak
+[ -e ~/.config/fastfetch ] && mv ~/.config/fastfetch ~/.config/fastfetch.bak
+
+# Link the files into place
+mkdir -p ~/.config
+ln -s "$PWD/.bashrc" ~/.bashrc
+ln -s "$PWD/config/oh-my-posh" ~/.config/oh-my-posh
+ln -s "$PWD/fastfetch" ~/.config/fastfetch
+
+# Reload
 source ~/.bashrc
 ```
+
+Install the dependencies (`zoxide`, `bat`, `fastfetch`, `oh-my-posh`) with your package manager. On Debian/Ubuntu `bat` is called `batcat`, so also run `mkdir -p ~/.local/bin && ln -s "$(command -v batcat)" ~/.local/bin/bat`.
  
 Symlinks mean that any edit you make in the repo is live immediately, and you can `git pull` to update.
  
