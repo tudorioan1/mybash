@@ -1,7 +1,7 @@
 # Tudor's custom bash setup
 <img width="1350" height="599" alt="image" src="https://github.com/user-attachments/assets/81a84c0b-fef0-474f-92c8-30828669296a" />
 
-My personal Bash configuration for Arch Linux: a clean prompt, a smarter `cd`, a nicer `cat`, and a system summary every time I open a terminal.
+My personal Bash configuration for Linux: a clean prompt, a smarter `cd`, a nicer `cat`, and a system summary every time I open a terminal.
 ## What's inside
  
 - **Prompt:** [Oh My Posh](https://ohmyposh.dev/) with a custom theme (`oh-my-posh/config.omp.json`)
