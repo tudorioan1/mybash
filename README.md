@@ -1,5 +1,6 @@
 # Tudor's custom bash setup
-<img width="908" height="464" alt="image" src="https://github.com/user-attachments/assets/f0476cc7-741a-4b53-9a2a-c3af9df36a08" />
+<img width="970" height="469" alt="image" src="https://github.com/user-attachments/assets/9c444a08-1cb5-453c-a7f7-ceafcda6cf2b" />
+
 
 
 My personal Bash configuration for Linux: a clean prompt, a smarter `cd`, a nicer `cat`, and a system summary every time I open a terminal.
